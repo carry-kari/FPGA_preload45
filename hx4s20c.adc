@@ -1,0 +1,30 @@
+# HX4S20C EG4S20BG256 pin map, independently transcribed from board manual.
+set_pin_assignment { clk_50m } { LOCATION = R7; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sw_reset_run } { LOCATION = C6; IOSTANDARD = LVCMOS33; }
+# KEY1 shares bank 3 with HDMI. Use its existing 2.5V input standard;
+# the board supplies the 3.3V pull-up. TN309 table 5-1 specifies clamp/pull off.
+set_pin_assignment { key1_n } { LOCATION = A2; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; PCICLAMP = OFF; PACKREG = OFF; }
+set_pin_assignment { key2_n } { LOCATION = B2; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; PCICLAMP = OFF; PACKREG = OFF; }
+set_pin_assignment { key3_n } { LOCATION = B1; IOSTANDARD = LVCMOS25; PULLTYPE = NONE; PCICLAMP = OFF; PACKREG = OFF; }
+# Preserve the PULLUP already selected by TD for the 3.3V switch inputs.
+set_pin_assignment { sw1_n } { LOCATION = C8; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; PACKREG = OFF; }
+set_pin_assignment { sw2_n } { LOCATION = C7; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; PACKREG = OFF; }
+set_pin_assignment { sw_audio_enable } { LOCATION = C5; IOSTANDARD = LVCMOS33; }
+
+set_pin_assignment { sd_cs_n } { LOCATION = A12; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_sclk } { LOCATION = A14; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_mosi } { LOCATION = A13; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { sd_miso } { LOCATION = B14; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+
+# LVDS25 P pin assignment lets TD reserve the corresponding N pin.
+set_pin_assignment { hdmi_tmds_p[0] } { LOCATION = G5; IOSTANDARD = LVDS25; }
+set_pin_assignment { hdmi_tmds_p[1] } { LOCATION = F1; IOSTANDARD = LVDS25; }
+set_pin_assignment { hdmi_tmds_p[2] } { LOCATION = E1; IOSTANDARD = LVDS25; }
+set_pin_assignment { hdmi_tmds_p[3] } { LOCATION = C3; IOSTANDARD = LVDS25; }
+set_pin_assignment { hdmi_ddc_scl } { LOCATION = P2; IOSTANDARD = LVCMOS25; }
+set_pin_assignment { hdmi_ddc_sda } { LOCATION = R2; IOSTANDARD = LVCMOS25; }
+
+set_pin_assignment { status_pll_locked } { LOCATION = A4; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { status_image_ready } { LOCATION = A3; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { status_video_locked } { LOCATION = C10; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { status_fault } { LOCATION = B12; IOSTANDARD = LVCMOS33; }
